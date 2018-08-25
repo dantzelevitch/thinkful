@@ -1,0 +1,20 @@
+
+Data Source: Amsterdam availability data scraped from AirBnB on December 24th. Question: What are the popular neighborhoods in Amsterdam?
+
+Scrape data on a different date.  Christmas eve would be an exceptional circumstance.  Reword the question "Which neighborhoods in Amsterdam are popular for tourists?"   
+
+
+Data Source: Mental health services use on September 12, 2001 in San Francisco, CA and New York City, NY. Question: How do patterns of mental health service use vary between cities?
+
+Get source data from a different date.  Sep 12, 2001 is an exceptional circumstance.   Collect data over a period of time in order to establish a "pattern of use".
+
+
+
+Data Source: Armenian Pub Survey. Question: What are the most common reasons Armenians visit local pubs?    
+
+Rephrase question:  What are the most common reasons Amernian students visit local pubs?
+
+
+
+
+
