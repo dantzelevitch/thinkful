@@ -19,6 +19,7 @@ inner join availtoday a
 on l.id = a.listing_id 
 order by l.price desc
 
+-------------------------------------------------
 
 2. What neighborhoods seem to be the most popular?
 
@@ -45,3 +46,21 @@ left outer join listingsummary ls
 	on ls.neighbourhood_cleansed = l.neighbourhood_cleansed
 group by l.neighbourhood_cleansed
 order by numdaysbooked2018 desc
+
+
+-------------------------------------------------
+
+
+3. --What time of year is the cheapest time to go to your city? What about the busiest?
+
+-- Oct/Nov/Dec/Jan are the cheapest and least busy
+-- The summer months June/July/Aug are the most expensive and busiest
+
+-- Looked at available listings because those are the only ones with price information
+select 
+substr(date,6,2) as Month, 
+avg(price) as AvgPrice,
+count(price) as NumAvailable
+from calendar where available = 't'
+group by month
+order by month
