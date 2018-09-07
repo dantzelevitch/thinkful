@@ -1,0 +1,62 @@
+1. What are the three longest trips on rainy days?
+
+select * from trips t
+inner join weather w
+on date(w.date) = date(t.start_date)
+and t.zip_code = w.zip
+and w.events = 'Rain'
+order by t.duration desc
+limit 50
+
+-------------------------------------
+
+2. Which station is full most often?
+Answer: San Francisco Caltrain (Townsend at 4th). -  23450 Occurences
+
+with
+	FullOccurences
+as (
+select station_id, count(*) as FullOccurences 
+from status 
+where docks_available = 0
+group by station_id
+order by FullOccurences desc)
+
+select 
+d.station_id, s.name, d.FullOccurences
+from FullOccurences d
+left outer join stations s
+on s.station_id = d.station_id
+order by FullOccurences desc
+
+-------------------------------------
+
+3. Return a list of stations with a count of number of trips starting at that station but ordered by dock count.
+
+select 
+s.station_id,  t.start_station, s.name, s.dockcount, count(*) as TripsStarting
+from stations s
+left outer join trips t
+on s.station_id = t.start_terminal
+group by t.start_station
+order by s.dockcount desc
+
+
+-------------------------------------
+
+4.  (Challenge) What's the length of the longest trip for each day it rains anywhere?
+
+with rainydays
+as (select distinct date(date) as rainydate
+	from weather 
+	where events = 'Rain')
+
+select 
+	date(t.start_date) as startdate,
+	max(t.duration) as longest_trip,
+	t.trip_id,
+	t.start_station
+from trips t
+inner join rainydays r on rainydate = date(t.start_date)
+group by startdate
+order by startdate desc
