@@ -1,0 +1,47 @@
+1. What's the most expensive listing? What else can you tell me about the listing?
+
+The most expensive listing appears to be $5,400.  We have all sorts of information about each listing including
+summary, pictures, location, accomodates, bedroom, etc.
+
+-- Remove dollar sign from price
+update listings set price = replace(price,'$','')
+
+-- Get available listings today order by price descending
+with availtoday
+as
+(select listing_id from 
+calendar where available = 't' 
+and date(date) = date('now'))
+
+select 
+l.* from listings l
+inner join availtoday a
+on l.id = a.listing_id 
+order by l.price desc
+
+
+2. What neighborhoods seem to be the most popular?
+
+--Broadway is the most popular followed by Belttown.  The query below creates a summary of 
+--Num Listings and Num Days Booked in 2018 by each Neighborhood
+
+-- Listings in each Neighborhood Regardless of Availability
+with ListingSummary
+as (
+select 
+neighbourhood_cleansed, count(*) as NumListings
+from listings
+group by neighbourhood_cleansed
+order by NumListings desc)
+
+-- Days booked in each neighborhood in 2018
+select
+l.neighbourhood_cleansed, ls.Numlistings, count(*) as NumDaysBooked2018
+from calendar c
+inner join listings l
+	on l.id = c.listing_id
+	and c.available = 'f' and c.date like '2018%'
+left outer join listingsummary ls
+	on ls.neighbourhood_cleansed = l.neighbourhood_cleansed
+group by l.neighbourhood_cleansed
+order by numdaysbooked2018 desc
