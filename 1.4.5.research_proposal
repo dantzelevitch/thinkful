@@ -1,0 +1,25 @@
+Problem:   Determine if Happy Days Fitness Tracker app is effective in its goal to help people increase activity levels.
+
+Solution / Hypothesis:   People who use the app do experience higher activity levels.
+
+Experiment
+Compare the change in activity levels for people who don't use the app vs people who use the app.  (across various subgroups such as geography, age, gender)
+
+Design
+Change the data collection method:
+Before registering for the app, users are forced to agree to terms of use which indicates that data may be aggregated for research purposes and to improve the app over time.
+Data is automatically collected for all users who install the app.
+Two Groups will be analyzed:
+1) Control group:  Those who install the app, but do not meet the active user criteria.  
+2) Test group:  Those who install the app and meet the active user criteria
+To be considerer an active user, you must interact with the app at least once per week over the first 4 weeks after installation. 
+Once the 2 groups are established, we can divide them into subgroups such as location, age, and gender.   
+Why do we need the control group?  If we instead had a single group of all users who installed the app:
+1)  Many people install an app, but don't use it.  Thus, if we're looking at everyone who installed the app, it won't tell if they are an active user or not.    
+2) If we only look at active users, change in usage could be due to external factors such as weather/seasonality.  But if we're comparing a user set and a non-user set in the same location, the seasonality is removed.
+
+Analysis
+Change in activity level will be tracked for both groups (and all subgroups) for 2 months after installation. 
+Benchmarks
+For the hypothesis to be true, the test group must have experienced an increase in activity from Month 1 to Month 2 that is at least 5% higher than the control group.   (With 95% confidence)
+
