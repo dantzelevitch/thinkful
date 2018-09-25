@@ -1,0 +1,17 @@
+Description of Data is here:   https://thinkful-ed.github.io/data-201-resources/ESS_practice_data/ESS_codebook.html
+
+None of them seem to be Interval?
+
+cntry - categorical
+idno - ID Number - Categorical
+year - Ordinal
+tvtot - Ratio
+ppltrst - Ratio
+pplfair - Ratio
+pplhlp - Ratio
+happy - Ratio
+sclmeet - Ratio
+sclact - Ratio
+gndr - Categorical
+agea - Ratio 
+partner - Categorical
