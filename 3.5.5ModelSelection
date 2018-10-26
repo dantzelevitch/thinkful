@@ -36,7 +36,9 @@ Naive Bayes (Bernoulli) is good for classification of binary variable (important
 
 5.You have 1000+ features.
 
-Random Forest and SVM are sensitive to data size.
+Reduce feature dimensionality by removing highly correlated colls (correlation_matrix)
+And use SelectKBest to see the p value of each feature and select the best.
+Lasso Regression can also help eliminate features that do not explain variance.
 
 
 6. Predict whether someone who adds items to their cart on a website will purchase the items.
@@ -46,6 +48,18 @@ Logistic Regression, K Nearest Neighbor, or Support Vector Classification.
 
 7. Your dataset dimensions are 982400 x 500
 
+Reduce dataset size by removing nulls and then taking a random sample.
+Reduce feature dimensionality by removing highly correlated colls (correlation_matrix)
+And SelectKBest.
 
-Identify faces in an image.
-Predict which of three flavors of ice cream will be most popular with boys vs girls.
+
+8. Identify faces in an image.
+
+Classification of faces would use either SVC, KNN, or Logistic Regression.
+
+
+9. Predict which of three flavors of ice cream will be most popular with boys vs girls.
+
+A simple crosstab or pivot table can show the results for this.
+If using a model, the classifier Naive Bayes Multinomial would work.
+
