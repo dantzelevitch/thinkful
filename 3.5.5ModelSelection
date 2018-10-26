@@ -1,11 +1,51 @@
-You now have a fairly substantial starting toolbox of supervised learning methods that you can use to tackle a host of exciting problems. To make sure all of these ideas are organized in your mind, please go through the list of problems below. For each, identify which supervised learning method(s) would be best for addressing that particular problem. Explain your reasoning and discuss your answers with your mentor.
+You now have a fairly substantial starting toolbox of supervised learning methods 
+that you can use to tackle a host of exciting problems. To make sure all of these ideas 
+are organized in your mind, please go through the list of problems below. For each, 
+identify which supervised learning method(s) would be best for addressing that particular problem. 
+Explain your reasoning and discuss your answers with your mentor.
 
-Predict the running times of prospective Olympic sprinters using data from the last 20 Olympics.
-You have more features (columns) than rows in your dataset.
-Identify the most important characteristic predicting likelihood of being jailed before age 20.
-Implement a filter to “highlight” emails that might be important to the recipient
-You have 1000+ features.
-Predict whether someone who adds items to their cart on a website will purchase the items.
-Your dataset dimensions are 982400 x 500
+1. Predict the running times of prospective Olympic sprinters using data from the last 20 Olympics.
+
+Use Regression to predict continuous outcome.
+Start with linear regression.
+If unable to establish linearity, use KNN Regression.
+If that doesn't work, try SVR.
+
+
+
+2. You have more features (columns) than rows in your dataset.
+
+SVM is best for this.
+Reduce the number of features using KBest and Correlation Matrix.
+
+
+3. Identify the most important characteristic predicting likelihood of being jailed before age 20.
+
+This is a binary classification problem (Jailed Before Age 20? Yes/No)
+It also requires understanding the features 
+And calculating probability of Yes feature.
+
+Logistic Regression can display the coeffecients that contribute to prob of a positive classification.
+Random Forest classification can output relative importance of features.
+
+
+4. Implement a filter to “highlight” emails that might be important to the recipient
+
+Naive Bayes (Bernoulli) is good for classification of binary variable (important/not important)
+
+
+5.You have 1000+ features.
+
+Random Forest and SVM are sensitive to data size.
+
+
+6. Predict whether someone who adds items to their cart on a website will purchase the items.
+
+This is a binary classification problem.
+Logistic Regression, K Nearest Neighbor, or Support Vector Classification.
+
+7. Your dataset dimensions are 982400 x 500
+
+
 Identify faces in an image.
 Predict which of three flavors of ice cream will be most popular with boys vs girls.
