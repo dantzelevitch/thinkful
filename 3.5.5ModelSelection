@@ -8,15 +8,20 @@ Explain your reasoning and discuss your answers with your mentor.
 
 Use Regression to predict continuous outcome.
 Start with linear regression.
-If unable to establish linearity, use KNN Regression.
-If that doesn't work, try SVR.
+If unable to establish linearity, use KNN Regression,
+Random Forest Regression,
+If that doesn't work, try SVR,  
+else try Gradient Boosting Regression.
 
 
 
 2. You have more features (columns) than rows in your dataset.
 
-SVM is best for this.
+
+SVM is good for this.
+Lasso Linear Regression or Logistic Regression with l1 regularization.
 Reduce the number of features using KBest and Correlation Matrix.
+
 
 
 3. Identify the most important characteristic predicting likelihood of being jailed before age 20.
@@ -44,18 +49,20 @@ Lasso Regression can also help eliminate features that do not explain variance.
 6. Predict whether someone who adds items to their cart on a website will purchase the items.
 
 This is a binary classification problem.
-Logistic Regression, K Nearest Neighbor, or Support Vector Classification.
+Logistic Regression, K Nearest Neighbor, or Support Vector Classification, or Random Forest.
 
 7. Your dataset dimensions are 982400 x 500
 
 Reduce dataset size by removing nulls and then taking a random sample.
 Reduce feature dimensionality by removing highly correlated colls (correlation_matrix)
 And SelectKBest.
+Avoid SVM and Gradient Boost models.  Slow with large datasets.
+
 
 
 8. Identify faces in an image.
 
-Classification of faces would use either SVC, KNN, or Logistic Regression.
+Classification of faces would use either SVC, KNN, Logistic Regression, or Random Forest.
 
 
 9. Predict which of three flavors of ice cream will be most popular with boys vs girls.
